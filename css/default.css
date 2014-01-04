@@ -12,7 +12,6 @@ body {
   margin-right:0px;
   margin-top:0px;
   margin-bottom:0px;
-  height:100%;
   background-color: #e6e6e6; /* */
   font-size: 87.0%;
 }
@@ -160,13 +159,14 @@ form {
 }
 
 #wikiBanner {
-  padding-top:5px;
+  padding:5px 0;
   text-align:center;
   font-family: "Trebuchet MS",Georgia,sans-serif;
 }
 
 a:link { color: #404040; }
 a:visited { color: #000000;}
+a.current { text-decoration: none; font-weight: bold; }
 /* a:hover {background-color:#999966;color:white} /* */
 .wikiTitle {
   padding-left:10px;
@@ -317,6 +317,7 @@ pre.quote {
 }
 
 table.wiki {
+  overflow-x: auto;
   border-collapse: collapse;
 /* background-color:#E2ECE5;
   background-color: #F8F7F0;
@@ -364,11 +365,11 @@ td.info, th.info {
 #wikiContent h4 { font-size:1.2em; }
 #wikiContent h5 { font-size:1.0em; }
 
-div.section h1 img,
-div.section h2 img,
-div.section h3 img,
-div.section h4 img,
-div.section h5 img {
+div.section h1 i,
+div.section h2 i,
+div.section h3 i,
+div.section h4 i,
+div.section h5 i {
   margin-top: 5px;
 }
 
@@ -491,6 +492,7 @@ span.button {
   padding:0px;
   margin:0px;
   margin-right:2px;
+  line-height:17px;
 
   _display:inline;
   _overflow:visible;
@@ -506,7 +508,7 @@ a.button-small {
   margin:0px 2px 0 0;
   text-decoration:none !important;
   margin-left:-3px;
-  line-height:100%;
+  line-height:15px;
 }
 
 a.button-small span {
@@ -987,12 +989,18 @@ div.foot ul li {
 #wikiFooter {
   clear:both;
   text-align:center;
+  margin: 10px 0;
+}
+
+#toolbar {
+  line-height: 100%;
 }
 
 .wikiHints {
-border: 1px solid #e5e5e5;
-background-color: #fafafa;
-padding: 2px 2px 0px 12px;
+  border: 1px solid #e5e5e5;
+  background-color: #fafafa;
+  padding: 0px 2px 0px 12px;
+  height: 110%;
 }
 
 .wikiHints .space {
@@ -1008,8 +1016,7 @@ padding: 2px 2px 0px 12px;
   font-family: sans-serif;
   letter-spacing: -1px;
   font-size: 0.9em;
-  padding: 0px 12px 0px 12px;
-  line-height: 150%;
+  padding: 0px 12px;
 }
 
 .wikiHints .head .tutorial-link {
@@ -1018,11 +1025,14 @@ padding: 2px 2px 0px 12px;
 
 .wikiHints .head .open-button,
 .wikiHints .head .close-button {
+  cursor:pointer;
   float: right;
+  padding-top: 3px;
 }
 
 .wikihints .head .clear {
   clear: both;
+  height: 0;
 }
 
 /* question mark(?) and close mark(x) for wikiHints */
@@ -1324,12 +1334,28 @@ img.imgRight {
   margin-bottom : 5px;
 }
 
+div.imgContainer.imgCenter,
+div.imgAttach.imgCenter,
 div.externalImage.imgCenter {
   text-align: center;
   display: block;
   margin-left:auto;
   margin-right:auto;
 }
+
+.imgContainer div.imgAttach {
+  display: inline-block;
+  border: 1px solid silver;
+  padding: 2px;
+}
+
+.imgContainer { margin: 10px 0; }
+.imgAttach .caption {
+  text-align: center;
+  padding: 3px;
+  font-size: inherit;
+}
+.imgAttach div span { display: none; }
 
 span.externalLink {
   display: none;
@@ -1548,8 +1574,13 @@ border:none;}
 
 .resizable-textarea textarea {
   margin:0;
+  resize:vertical;
 }
-.resizable-textarea {padding-bottom:0.3em;}
+
+.resizable-textarea {
+  padding-bottom:0.3em;
+  line-height: 100%;
+}
 
 #toTop {
   float:right;
@@ -1585,7 +1616,15 @@ border:none;}
 }
 
 #save_state {
-  background-color: #ffffca;
+  background-color: #3879d9;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  color: #fff;
+  font-family: verdana, sans-serif;
+  font-size: 11px;
+  padding: 4px;
+  display: none;
 }
 
 .recentChanges {
@@ -1680,24 +1719,43 @@ div.wikiInfo { overflow-x: auto; }
   padding: 2px;
 }
 
-/* external images */
-.externalImage div a { display: none; }
+/* images */
+.externalImage,
+.imgAttach {
+  max-width: 100%;
+  max-height: 800px;
+}
+
+.externalImage img,
+.imgAttach img {
+  max-width: 100%;
+}
+
+div.imgAttach { display: inline-block; text-align: center; }
+.externalImage div { text-align: center; }
+.externalImage div div a { display: none; }
 .externalImage { display: inline-block; }
-
-@media screen and (max-width: 700px) {
-#wikiMenu ul { height: 100%; }
-.imgAttach img { max-width: 600px; height:auto; }
-.imgAttach { overflow-x: auto; }
+div.imgAttach, .externalImage div {
+  text-align: center;
 }
 
-@media screen and (max-width: 900px) {
-#goForm { float: none; }
-#goForm { text-align: center; }
-.imgAttach img { max-width: 800px; height:auto; }
-.imgAttach { overflow-x: auto; }
+div.imgAttach div.loading, .externalImage div.loading {
+  background: url(../../../imgs/misc/spinner_32.gif) no-repeat center;
+  display: inline-block;
 }
 
-div.externalObject div {
+div.imgAttach div.wrapper,
+div.externalImage div div.wrapper { display: inline-block; margin:0; padding:0; }
+
+div.imgAttach div.loading img,
+.externalImage div.loading img {
+  opacity:.30 !important;
+  filter:alpha(opacity=30);
+}
+
+div.externalObject div { text-align: center; }
+
+div.externalObject div div {
   text-align: center;
   display: block;
   background-image: linear-gradient(#fafafa, #eaeaea);
@@ -1713,20 +1771,35 @@ div.externalObject.youtube div span {
 }
 
 div.externalObject { display: inline-block; }
-object.external { width:640px; height:480px; }
 
-@media screen and (max-width: 800px) {
 /* youtube movie */
-object.external { width:520px; height: 300px; }
-object.external embed { width:520px; height: 300px; }
-object.external { display: none; }
+/* object.external { width:640px; height:480px; } */
+object.external, object.external embed { min-width:310px; min-height: 200px; }
+div.externalObject div div { text-align: center; display: block; background-color: #c8c8ec; padding-left: auto; padding-right: auto;}
+div.externalObject { display: block; padding-left: auto; padding-right: auto;}
 
-div.imgAttach img { max-width: 800px; height:auto; }
-.imgAttach { overflow-x: auto; }
+/* FIXME */
+@media screen and (min-width: 480px) and (max-width: 700px) {
+object.external { max-width:360px; max-height: 300px; }
+object.external embed { max-width:480px; max-height: 300px; }
 
 }
+
+@media screen and (max-width: 800px) {
+.imgAttach { overflow-x: auto; }
+.imgAttach img { height: auto; }
+
+}
+
+@media screen and (max-width: 900px) {
+#wikiMenu ul { height: 100%; }
+#goForm { float: none; }
+#goForm { text-align: center; }
+.imgAttach { overflow-x: auto; }
+}
+
 @media screen and (max-width: 480px) {
-html { font-size: 100%; }
+body { font-size: 100%; }
 div.message { margin: 3pt 5px 0px 5px; }
 #wikiExtra { padding: 0 0 0 2px; /* */ }
 #wikiMenu ul { list-style: square outside; }
@@ -1742,13 +1815,14 @@ div.message { margin: 3pt 5px 0px 5px; }
 #wikiContent div:hover .sectionEdit { display: none; visibility: hidden;}
 div.sectionEdit { display: none; visibility: hidden;}
 
-div.section h1 img,
-div.section h2 img,
-div.section h3 img,
-div.section h4 img,
-div.section h5 img {
+div.section h1 i,
+div.section h2 i,
+div.section h3 i,
+div.section h4 i,
+div.section h5 i {
   float: right;
   margin-top: 5px;
+  margin-right: 2px;
 }
 div.section { border-top: 1px solid #e0e0e0; /* */ }
 div.section div div { padding-bottom: 1em; /* */ }
@@ -1756,26 +1830,33 @@ div.section div div { padding-bottom: 1em; /* */ }
 #wikiContent h1, #wikiContent h2 { border-bottom: none; }
 
 /* external images */
-img.external { display: none; }
-img.external:hover { display: block; }
-.externalImage div a { display: block; text-align: center; }
+div.imgAttach, .externalImage { display: block; }
+div.imgAttach div span { display: inline; }
+a.externalLink img { display: inline; }
+.externalImage a { display: inline; text-align: center; }
+.externalImage div div a { display: block; text-align: center; }
 
 div.section div.externalImage div { padding-bottom:0; }
-div.externalImage div { display: inline; background-color: #c8c8ec; }
-div.externalImage:hover img.external { display: inline; max-width: 360px; height:auto; }
+div.externalImage div div { display: inline; }
+/* .externalImage { display: block; overflow-x: auto; } */
+.externalImage div { margin: 5px auto; }
 
-div.imgAttach img { max-width: 360px; height:auto; }
 .imgAttach { overflow-x: auto; }
+
+object.external { max-width:310px; max-height: 200px; }
+object.external embed { max-width:310px; max-height: 200px; }
+
+table.right { float: none; margin-left: auto; margin-right: auto; }
+table.wiki { overflow-x: auto; display: block; }
+
+#save_state {
+  background-color: #3879d9;
+  position: fixed;
+  top: 2px;
+  right: 2px;
 }
 
-table.right { margin-left: auto; margin-right: auto; }
-
-/* youtube movie */
-object.external { display: none; }
-object.external { width:310px; height: 200px; }
-object.external embed { width:310px; height: 200px; }
-div.externalObject div { text-align: center; display: block; background-color: #c8c8ec; padding-left: auto; padding-right: auto;}
-div.externalObject { display: block; padding-left: auto; padding-right: auto;}
+}
 
 .wikiRedirect {
   margin-left: 1em;
@@ -1892,3 +1973,93 @@ div#wikiSpoiler:before {
   font-size: 80px;
 }
 
+div.pull-msg {
+  margin: 0 auto 5px auto;
+  padding: 0 2em;
+  text-align: center;
+  background-color: #1CA6D4;
+  max-width: 960px;
+  box-shadow: 0 2px 2px rgba(100, 100, 100, 0.3);
+  border-radius: 0.3em;
+}
+
+div.pull-msg a {
+  font-family: Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  padding: 15px 0;
+  display: inline-block;
+}
+
+div.switch-pc-mobile {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid #ccc;
+  background: #444;
+}
+
+a.switch-to-mobile {
+  color: #eaeaea;
+  font-size: 60px;
+  padding: 30px 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.switch-to-pc {
+  color: #eaeaea;
+  font-size: 26px;
+  padding: 12px 0;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.imgAttach a.zoom, .externalImage a.zoom {
+  display: inline-block;
+  text-indent: 100px;
+  overflow: hidden;
+  margin-left: -22px;
+  width: 22px;
+  height: 22px;
+  background: url(../imgs/magnify-icon.png) no-repeat 0 -22px;
+  opacity:.70 !important;
+  filter:alpha(opacity=70);
+}
+
+.imgAttach:hover a.zoom, .externalImage:hover a.zoom {
+  background-position: 0 0;
+}
+
+.imgAttach a.zoom:hover, .externalImage a.zoom:hover,
+.imgAttach a.zoom.out:hover, .externalImage a.zoom.out:hover {
+  background-position: 0 -22px;
+}
+
+.imgAttach a.zoom.out, .externalImage a.zoom.out {
+  background-position: -22px 0;
+}
+
+.imgAttach a.zoom, .externalImage a.zoom {
+  opacity:1.0;
+}
+
+/* .uploadForm ul li { list-style: none; } */
+
+.icon-open, .icon-close {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  vertical-align: text-top;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.icon-open {
+  background: url(../../../imgs/misc/open.png) no-repeat;
+}
+
+.icon-close {
+  background: url(../../../imgs/misc/close.png) no-repeat;
+}

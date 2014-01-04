@@ -30,3 +30,9 @@ FOOT;
     print 'Processing time '.$timer;
   //print "<pre>".$options['timer']->Write()."</pre>";
   print '</div>';
+
+if (is_mobile() and empty($_COOKIE['desktop'])) {
+  echo '<div class="switch-pc-mobile">';
+  echo '<a href="?mobile=0" class="switch-to-pc">Desktop version</a>';
+  echo '</div>';
+}

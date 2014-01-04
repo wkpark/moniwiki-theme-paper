@@ -28,6 +28,11 @@ a.externalLink.unnamed[target="_blank"]:after {
 img.externalLink { display: none; }
 </style>\n
 EOF;
+if (is_mobile() and !empty($_COOKIE['desktop'])) {
+  echo '<div class="switch-pc-mobile">';
+  echo '<a href="?mobile=1" class="switch-to-mobile">Mobile version</a>';
+  echo '</div>';
+}
 ?>
 <div id='mainBody'>
 <div id='wikiIcon'><?php echo $upper_icon.$icons.$rss_icon?></div>
