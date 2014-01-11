@@ -28,6 +28,26 @@ a.externalLink.unnamed[target="_blank"]:after {
 img.externalLink { display: none; }
 </style>\n
 EOF;
+
+echo <<<EOF
+<script type="text/javascript">
+function toggle_menu() {
+  var menu = document.getElementById('wikiMenu');
+  if (!menu) return;
+
+  if (menu.style.height == 0)
+    menu.style.height = 0;
+  if (parseInt(menu.style.height) == 0) {
+    menu.style.height = 'auto';
+  } else {
+    menu.style.height = '0';
+  }
+  console.log(menu.style.height);
+}
+</script>
+
+EOF;
+
 if (is_mobile() and !empty($_COOKIE['desktop'])) {
   echo '<div class="switch-pc-mobile">';
   echo '<a href="?mobile=1" class="switch-to-mobile">Mobile version</a>';
@@ -37,6 +57,18 @@ if (is_mobile() and !empty($_COOKIE['desktop'])) {
 <div id='mainBody'>
 <div id='wikiIcon'><?php echo $upper_icon.$icons.$rss_icon?></div>
    <!-- goform on the MenuBar -->
+<div class='navbar-fixed-top navbar'>
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" onclick="toggle_menu()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="brand hidden-desktop"><?php
+echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
+?></span>
+<div id="wikiMenu" class="collapse">
    <div id='goForm'>
 <form id='go' action='' method='get' onsubmit="return moin_submit();">
    <div>
@@ -46,7 +78,9 @@ if (is_mobile() and !empty($_COOKIE['desktop'])) {
    </div>
 </form>
    </div>
-<?php echo $menu?>
+<?php echo str_replace('<div id="wikiMenu">', '', $menu); ?>
+</div></div></div>
+
 <?php empty($msg) ? '' : print $msg; ?>
 <div id='container'>
 <!-- ?php echo '<div id="wikiTrailer"><p><span>'.$trail.'</span></p></div>';? -->
