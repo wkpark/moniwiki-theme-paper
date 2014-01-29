@@ -2076,6 +2076,31 @@ a.switch-to-pc {
   opacity:1.0;
 }
 
+/* folding processor */
+.folding {
+  background-color: #f7f7f7;
+  padding:0;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(220, 220, 220, 0.7) 0 3px 10px -1px;
+  box-shadow: rgba(220, 220, 220, 0.7) 0 3px 5px -1px;
+  margin:0;
+}
+
+.folding dt {
+  height:20px;
+  font-weight:bold;
+  line-height:20px;
+  vertical-align:middle;
+  cursor:pointer;
+  padding: 3px;
+  padding-left: 16px;
+  background: url(../../../imgs/misc/open.png) no-repeat 3px 7px;
+}
+
+.folding dt.opened {
+  background: url(../../../imgs/misc/close.png) no-repeat 3px 7px;
+}
+
 /* .uploadForm ul li { list-style: none; } */
 
 .icon-open, .icon-close {
