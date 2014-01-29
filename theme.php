@@ -13,6 +13,7 @@ $_splash=0; # enable splash image
 $_logo=0; # enable logo
 $_toptitle=0; # old-style title.
 $_no_urlicons=0; # do not insert url icons
+$_use_lastmod=0; # show last modified info
 
 $imgdir=$themeurl."/imgs";
 #$icon['rss']="<img src='$imgdir/feed.png' alt='RSS' style='vertical-align:middle;border:0px' />";

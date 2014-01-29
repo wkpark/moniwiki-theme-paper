@@ -87,6 +87,10 @@ echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
 <div id='mycontent'>
 <?php echo '<div class="wikiTitle" id="wikiTitle">'.$title.'</div>';?>
 <?php echo $subindex;?>
+<?php if (empty($options['action']) and !empty($lastedit) and !empty($this->_use_lastmod))
+    echo "<p class='last-modified'>".
+        "<span class='i18n' title='last modified:'>"._("last modified:")."</span> $lastedit $lasttime</p>";
+?>
 <?php
 if (empty($options['action']) and !empty($DBInfo->use_scrap)) {
   $scrap = macro_Scrap($this, 'js');
