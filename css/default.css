@@ -2101,6 +2101,25 @@ a.switch-to-pc {
   background: url(../../../imgs/misc/close.png) no-repeat 3px 7px;
 }
 
+/* Join agreement */
+.join-agreement {
+  height: 140px;
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0 20px 15px 20px;
+  padding: 10px;
+  overflow: auto;
+  border: 1px solid #DDD;
+  background: #FBFBFB;
+  color: #767676;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.check-agreement {
+  margin-left: 20px;
+}
+
 /* .uploadForm ul li { list-style: none; } */
 
 .icon-open, .icon-close {
