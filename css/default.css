@@ -336,7 +336,7 @@ table.wiki tr {
 /* border: 0px inset #EAF2F4; */
 }
 
-table.wiki td {
+table.wiki td, table.wiki th {
   border: 1px solid #969696;
   padding:5px;
 }
