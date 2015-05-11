@@ -104,3 +104,18 @@ if (empty($options['action']) and !empty($DBInfo->use_scrap)) {
     }
   }
 }
+
+if (empty($options['action']) and !empty($DBInfo->use_discuss)) {
+  $discuss = $this->macro_repl('Discuss', 'js');
+  if (!empty($discuss)) {
+    echo "<div id='discuss'>";
+    echo $discuss;
+    echo "</div>";
+    $js = $this->get_javascripts();
+    if ($js) {
+      echo $js;
+    }
+    echo "<div id='discuss-links'>";
+    echo "</div>";
+  }
+}
