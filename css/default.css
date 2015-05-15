@@ -331,6 +331,8 @@ table.wiki {
   border: 0px outset #ddddb0; */
 }
 
+table.right { margin-left: 0.5em; }
+
 table.wiki tr {
 /* background-color: #F8F8F8; */
 /* border-collapse: collapse; */
@@ -1144,6 +1146,7 @@ blockquote.quote {
   padding: 0.20em 0.8em;
   line-height: 1.45;
   color: #383838;
+  overflow: hidden;
 }
 
 div.quote.indent {
