@@ -1851,6 +1851,12 @@ div.externalObject.vimeo div span {
   vertical-align:middle;
 }
 
+div.externalObject.niconico div span {
+  background: url("../../../imgs/interwiki/nicovideo-16.png") no-repeat;
+  padding-left: 17px;
+  background-position: 0 1px;
+}
+
 div.externalObject { display: inline-block; }
 
 /* youtube movie */
