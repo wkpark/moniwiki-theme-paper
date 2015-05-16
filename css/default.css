@@ -1865,6 +1865,8 @@ div.externalObject { display: inline-block; }
 /* youtube movie */
 object.external { width:560px; height:340px; }
 object.external, object.external embed { min-width:310px; min-height: 200px; }
+iframe.external { width:560px; height:340px; }
+iframe.external { min-width:310px; min-height: 200px; }
 div.externalObject div div { text-align: center; display: block; background-color: #c8c8ec; padding-left: auto; padding-right: auto;}
 div.externalObject { display: block; padding-left: auto; padding-right: auto;}
 
@@ -1872,6 +1874,7 @@ div.externalObject { display: block; padding-left: auto; padding-right: auto;}
 @media screen and (min-width: 480px) and (max-width: 700px) {
 object.external { max-width:360px; max-height: 300px; }
 object.external embed { max-width:480px; max-height: 300px; }
+iframe.external { max-width:480px; max-height: 300px; }
 
 }
 
@@ -1937,8 +1940,9 @@ div.externalImage div div { display: inline; }
 
 .imgAttach { overflow-x: auto; }
 
-object.external { max-width:310px; max-height: 200px; }
-object.external embed { max-width:310px; max-height: 200px; }
+object.external { max-width:340px; max-height: 200px; }
+object.external embed { max-width:340px; max-height: 200px; }
+iframe.external { max-width:340px; max-height: 200px; }
 
 table.right { float: none; margin-left: auto; margin-right: auto; }
 table.wiki { overflow-x: auto; display: block; }
