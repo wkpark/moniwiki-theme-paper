@@ -1207,6 +1207,39 @@ div.foot ul li {
   margin: 10px 0;
 }
 
+.wikiToc {
+  display: table;
+  padding: 1em;
+}
+
+.wikiToc.right, .wikiToc.left {
+  background: #fff;
+  border:1px solid #ececec;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
+  box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
+}
+
+.wikiToc.right {
+  float:right;
+  margin-left: 1em;
+}
+
+.wikiToc.left {
+  float:left;
+  margin-right: 1.5em;
+}
+
+.toctoggle {
+  position: relative;
+  top: 3px;
+  display: inline-block;
+}
+
+#wikiContent .right .toctitle, #wikiContent .left .toctitle {
+  margin-top: 0;
+}
+
 #toolbar {
   margin-bottom: 0px;
   margin-top: 1px;
@@ -1843,10 +1876,13 @@ border:none;}
 }
 
 #discuss-links, #discuss, #scrap {
+  float: right;
+}
+
+#discuss-links, #discuss, #scrap ul {
   margin-right: 5px;
   padding: 1em;
   margin-left: 1em;
-  float: right;
   background-color:#FFF880;
   box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
   border-radius: 0;
@@ -2119,6 +2155,7 @@ img.avatar { height:16px; vertical-align:middle; border: none; }
 object.external { max-width:360px; max-height: 300px; }
 object.external embed { max-width:480px; max-height: 300px; }
 iframe.external { max-width:480px; max-height: 300px; }
+.wikiToc.right, .wikiToc.left { float:none; margin:0; }
 
 }
 
@@ -2245,6 +2282,38 @@ img.interwiki { margin-right: 2px; }
   border: 1px solid #f0f0f0;
   border-radius: 4px;
 }
+
+.share-buttons ul, .share-buttons ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+.share-buttons ul li a.facebook {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background: url(../../../imgs/interwiki/facebook-16.png) no-repeat scroll 0 0 transparent;
+  vertical-align:middle;
+}
+.share-buttons ul li a.facebook span { display: none; }
+
+.share-buttons ul li a.twitter {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background: url(../../../imgs/interwiki/twitter-16.png) no-repeat scroll 0 0 transparent;
+  vertical-align:middle;
+}
+.share-buttons ul li a.twitter span { display: none; }
+
+.share-buttons ul li a.gplus {
+  display: inline-block;
+  width:16px;
+  height:16px;
+  background: url(../../../imgs/interwiki/gplus-16.png) no-repeat scroll 0 0 transparent;
+  vertical-align:middle;
+}
+.share-buttons ul li a.gplus span { display: none; }
 
 /* Twitter */
 #mycontent .twitter-share-button.twitter-count-horizontal {
