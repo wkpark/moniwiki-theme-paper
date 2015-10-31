@@ -324,6 +324,7 @@ pre.quote {
 }
 
 table.wiki {
+  background-color: #fefffc; /* #F8F7F0 */
   /* overflow-x: auto; /* */
   border-collapse: collapse;
 /* background-color:#E2ECE5;
