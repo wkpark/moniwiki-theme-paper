@@ -1,7 +1,7 @@
 <?php /* MoniWiki Theme by wkpark at kldp.org */
 if (!empty($DBInfo->use_scrap))
   include_once("plugin/scrap.php");
-if (!empty($this->_no_urlicons))
+if ($this->_no_urlicons == 1)
   echo <<<EOF
 <style type='text/css'>
 img.url { /* display: none; /* */ }
@@ -26,6 +26,30 @@ a.externalLink.unnamed[target="_blank"]:after {
 }
 
 img.externalLink { display: none; }
+</style>\n
+EOF;
+else if ($this->_no_urlicons == 2)
+  echo <<<EOF
+<style type='text/css'>
+img.url { /* display: none; /* */ }
+
+a.externalLink:before {
+  padding: 0 0.1em;
+  background: #008000;
+  color: #FFF;
+  content: "外";
+  border-radius: 1px;
+  opacity: .7;
+  filter: alpha(opacity=70);
+  margin-right: 0.1em;
+}
+
+#wikiMenu a.externalLink.named:before {
+  content: '';
+  padding: 0;
+  background: none;
+}
+
 </style>\n
 EOF;
 
