@@ -70,6 +70,7 @@ div {
   /* overflow:hidden; does not work correctly in the mozilla */
 }
 
+/*
 #pTopLeft {
   background: url("../imgs/ntl.png") no-repeat;
   z-index:4;
@@ -79,6 +80,7 @@ div {
   background: url("../imgs/ntr.png") no-repeat right top;
   z-index:4;
 }
+*/
 
 #pBanSpace {
   height:3px;
@@ -458,7 +460,7 @@ h2,h1 {
   overflow: hidden;
   width: 16px;
   height: 16px;
-  background: transparent url(../imgs/close.png) 0 0 no-repeat;
+  /* background: transparent url(../imgs/close.png) 0 0 no-repeat; */
   background-size: 16px 16px;
   margin: -5px -5px 0 0;
   cursor: pointer;
@@ -1577,7 +1579,7 @@ math, math[mode="inline"] {
 #goFormUpper input.goto {
   width:174px !important; 
   height:25px;
-  background:url(../imgs/goinput2.png) no-repeat left top;
+  /* background:url(../imgs/goinput2.png) no-repeat left top; */
   border:none;
   outline:none;
   padding:6px 7px;
@@ -1587,7 +1589,7 @@ math, math[mode="inline"] {
 }
 
 * html #goFormUpper input.goto { /* IE fix */
-  background:url(../imgs/goinput2.png) no-repeat left top fixed;
+  /* background:url(../imgs/goinput2.png) no-repeat left top fixed; /* */
 }
 
 #goFormUpper input.goto:hover {
@@ -1602,7 +1604,7 @@ font-weight:bold;
 margin-top:0px;
 padding:5px 5px;
 font-size:11px;
-background:url(../imgs/gobutton2.png) no-repeat left top;
+/* background:url(../imgs/gobutton2.png) no-repeat left top; */
 cursor:pointer;
 border:none;}
 
@@ -2127,7 +2129,7 @@ table.wiki { overflow-x: auto; }
 }
 
 .wikiDeprecated p {
-  background: url("../../../imgs/misc/deprecated.png") no-repeat 0 3px;
+  /* background: url("../../../imgs/misc/deprecated.png") no-repeat 0 3px; /* */
   background-size:18px 18px;
   padding-left: 1.5em;
   font-size:1.0em;
@@ -2599,9 +2601,5 @@ tt.foot {
 
 .info-stat { width: 90%; margin: auto; }
 .info-stat canvas { width: 500px; height: 450px; }
-
-#siteTitle p { display:block; font-size:13px; margin: 30px 0 0 16px; }
-#siteTitle { background: url(../imgs/veda-banner2.png) no-repeat; height: 40px; }
-#siteTitle a { display: none; }
 
 }
