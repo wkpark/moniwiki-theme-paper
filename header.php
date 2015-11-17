@@ -63,8 +63,10 @@ function toggle_menu() {
     menu.style.height = 0;
   if (parseInt(menu.style.height) == 0) {
     menu.style.height = 'auto';
+    menu.className = '';
   } else {
     menu.style.height = '0';
+    menu.className = 'collapse';
   }
   console.log(menu.style.height);
 }

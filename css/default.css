@@ -982,7 +982,7 @@ div.foot ul li {
 #wikiMenu ul {
   display:inline-block;
   list-style:none;
-  height:40px;
+  /* height:40px; */
   margin:0;
   padding:0;
   margin-left:0;
@@ -993,11 +993,10 @@ div.foot ul li {
 
 #wikiMenu li {
   display:inline-block;
+  position:relative;
   height:41px;
-  margin:0px;
-  padding:1px 0 0 0;
-
-  float: left;
+  margin:0;
+  /* padding:1px 0 0 0; */
 }
 
 #wikiMenu li img {
@@ -1020,7 +1019,6 @@ div.foot ul li {
   background-color: #e0e0e0; /* dark blue */
   /* background-color: #F2B568; /* orange */
   text-decoration: none;
-  border-radius: 0.3em;
 }
 
 #wikiMenu li.current a {
@@ -1042,6 +1040,31 @@ div.foot ul li {
 #wikiMenu a{
   font-weight:bold;
   text-decoration:none;
+}
+
+#wikiMenu li ul {
+  position: absolute;
+  display: none;
+  left: 0;
+  white-space: nowrap;
+  list-style: none;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4;
+  margin-left: 0;
+  padding-bottom: 0 !important;
+}
+
+#wikiMenu li:hover ul {
+  display: block;
+  z-index: 9999;
+  background: #fff;
+}
+
+#wikiMenu li ul>li,
+#wikiMenu li ul>li a {
+  display: block;
 }
 
 #wikiAction {
@@ -1808,15 +1831,35 @@ border:none;}
 }
 
 #save_state {
-  background-color: #3879d9;
+  background-color: rgba(56, 121, 217, 0.84);
   position: absolute;
   top: 2px;
   right: 2px;
   color: #fff;
   font-family: verdana, sans-serif;
-  font-size: 11px;
-  padding: 4px;
+  font-size: 0.9rem;
+  padding: 0.3rem;
   display: none;
+  z-index:2;
+}
+
+#editform ins {
+  display: none;
+  background-color: rgba(56, 121, 217, 0.56);
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  color: #fff;
+  font-family: verdana, sans-serif;
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  text-decoration:none;
+  z-index:1;
+}
+
+#editform ins.stub {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: #ff0;
 }
 
 .recentChanges {
@@ -2042,7 +2085,7 @@ iframe.external { max-width:480px; max-height: 300px; }
 }
 
 @media screen and (max-width: 979px) {
-#wikiMenu ul { height: 100%; }
+#wikiMenu ul { /* height: 100%; */ }
 #goForm { float: none; }
 #goForm { text-align: center; }
 .imgAttach { overflow-x: auto; }
