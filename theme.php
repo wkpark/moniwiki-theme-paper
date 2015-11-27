@@ -14,6 +14,10 @@ $_logo=0; # enable logo
 $_toptitle=0; # old-style title.
 $_no_urlicons=2; # insert url icons
 $_use_lastmod=0; # show last modified info
+$_use_contributors=0; # show contributors link
 
 $imgdir=$themeurl."/imgs";
 #$icon['rss']="<img src='$imgdir/feed.png' alt='RSS' style='vertical-align:middle;border:0px' />";
+
+if (file_exists(dirname(__FILE__).'/local.php'))
+    include(dirname(__FILE__).'/local.php');

@@ -1,6 +1,4 @@
 <?php /* MoniWiki Theme by wkpark at kldp.org */
-if (!empty($DBInfo->use_scrap))
-  include_once("plugin/scrap.php");
 if ($this->_no_urlicons == 1)
   echo <<<EOF
 <style type='text/css'>
@@ -110,16 +108,25 @@ echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
 <?php empty($msg) ? '' : print $msg; ?>
 <div id='container'>
 <!-- ?php echo '<div id="wikiTrailer"><p><span>'.$trail.'</span></p></div>';? -->
-<div id='mycontent'>
-<?php echo '<div class="wikiTitle" id="wikiTitle">'.$title.'</div>';?>
+<div id='mycontent' class='hentry'>
+<?php echo '<div class="wikiTitle entry-title" id="wikiTitle">'.$title.'</div>';?>
 <?php echo $subindex;?>
-<?php if (empty($options['action']) and !empty($lastedit) and !empty($this->_use_lastmod))
+<?php
+if (empty($options['action']) and !empty($lastedit) and !empty($this->_use_lastmod)):
     echo "<p class='last-modified'>".
-        "<span class='i18n' title='last modified:'>"._("last modified:")."</span> $lastedit $lasttime</p>";
+        "<span class='i18n' lang='ko' title='last modified:'>"._("last modified:")."</span> <span class='updated'><span class='value-title' title='$datetime'>$lastedit $lasttime</span></span>";
+    if ($this->_use_contributors) {
+        $url = $this->link_url($this->page->urlname, '?action=contributors');
+        echo ' ', sprintf(_("by %s"),
+            "<span class='editors'><span class='vcard'><a class='fn nickname url' href='".$url."'>".
+            "<span class='i18n' lang='ko' title='Contributors'>"._("Contributors")."</span></a></span></span>");
+    }
+    echo "</p>";
+endif;
 ?>
 <?php
 if (empty($options['action']) and !empty($DBInfo->use_scrap)) {
-  $scrap = macro_Scrap($this, 'js');
+  $scrap = $this->macro_repl('Scrap', 'js');
   if (!empty($scrap)) {
     echo "<div id='scrap'>";
     echo $scrap;
