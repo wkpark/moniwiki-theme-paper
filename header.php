@@ -83,9 +83,11 @@ if (is_mobile() and !empty($_COOKIE['desktop'])) {
 }
 ?>
 <div id='mainBody'>
+<?php echo '<'.$this->tags['header'].'>'; ?>
+
 <div id='wikiIcon'><?php echo $upper_icon.$icons.$rss_icon?></div>
    <!-- goform on the MenuBar -->
-<div class='navbar-fixed-top navbar'>
+<?php echo '<'.$this->tags['nav']." class='navbar-fixed-top navbar'>";?>
   <div class="navbar-inner">
     <div class="container">
       <button type="button" class="btn btn-navbar" onclick="toggle_menu()">
@@ -107,9 +109,12 @@ echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
 </form>
    </div>
 <?php echo str_replace('<div id="wikiMenu">', '', $menu); ?>
-</div></div></div>
+
+</div></div><?php echo '</'.$this->tags['nav'].'>';?>
 
 <?php empty($msg) ? '' : print $msg; ?>
+<?php echo '</'.$this->tags['header'].'>'; ?>
+
 <div id='container'>
 <!-- ?php echo '<div id="wikiTrailer"><p><span>'.$trail.'</span></p></div>';? -->
 <div id='mycontent' class='hentry'>

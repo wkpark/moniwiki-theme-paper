@@ -1,7 +1,7 @@
 </div>
 </div>
 </div>
-<div id='wikiFooter'>
+<?php echo "<".$this->tags['footer']." id='wikiFooter'>";?>
 <?php
 $banner= <<<FOOT
  <a href="$validator_xhtml"><img
@@ -29,7 +29,7 @@ FOOT;
   if (!empty($timer))
     print 'Processing time '.$timer;
   //print "<pre>".$options['timer']->Write()."</pre>";
-  print '</div>';
+  print '</'.$this->tags['footer'].'>';
 
 if (is_mobile() and empty($_COOKIE['desktop'])) {
   echo '<div class="switch-pc-mobile">';
