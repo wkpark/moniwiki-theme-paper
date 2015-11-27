@@ -48,6 +48,10 @@ a.externalLink:before {
   background: none;
 }
 
+a.externalLink.source:before {
+  content: '本';
+}
+
 </style>\n
 EOF;
 

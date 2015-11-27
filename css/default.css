@@ -1566,7 +1566,7 @@ math, math[mode="inline"] {
   top:10px;
 }
 
-.sectionEdit a span {
+.sectionEdit span a {
   padding:3px 5px 3px 5px;
   font-size:12px;
   /* visibility:hidden; */
@@ -2105,8 +2105,8 @@ div.message { margin: 3pt 5px 0px 5px; }
 #wikiBody { margin:0; }
 #wikiContent { padding:0 0.4em; }
 #wikiAction { font-size: 0.8em; }
-#wikiContent div:hover .sectionEdit { display: none; visibility: hidden;}
-div.sectionEdit { display: none; visibility: hidden;}
+/*#wikiContent div:hover .sectionEdit { display: none; visibility: hidden;}
+div.sectionEdit { display: none; visibility: hidden;} */
 
 div.section h1 i,
 div.section h2 i,
