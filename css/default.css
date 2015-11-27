@@ -1181,7 +1181,7 @@ div.foot ul li {
 #wikiBody del a:visited { color: #5F90D0; }
 #wikiBody del a.nonexistent { color: #cc6161; }
 
-#wikiBody a.perma { color: #237286; }
+#wikiBody a.perma { color: #A7A7A7; text-decoration: none; }
 
 #wikiBody embed,
 #wikiBody iframe {
