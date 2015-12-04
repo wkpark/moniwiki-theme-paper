@@ -233,6 +233,39 @@ tt.sister {
   text-decoration: none;
 }
 
+/* wiki category */
+div.wikiCategory {
+  border: 1px solid #a0a0a0;
+  padding: 0.4rem;
+}
+
+#wikiBody div.wikiCategory h2 {
+  display: inline-block; border: 0;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+div.wikiCategory h2:after { content: ':'; }
+div.wikiCategory ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+div.wikiCategory li {
+  display: inline;
+  list-style: none;
+  padding-left: 0.25em;
+  border-left: 1px solid #a0a0a0;
+}
+
+div.wikiCategory li:first-child {
+  padding-left: 0.25em;
+  border-left: none;
+}
+
 pre {
   white-space:pre-wrap;
   white-space: -moz-pre-wrap;
