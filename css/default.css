@@ -2301,6 +2301,12 @@ div#float-footnote {
 .wikiBlame .line { width:1%; padding-left: 8px; padding-right: 8px; text-align:right; border-right: 2px solid #b0b0b0; }
 .wikiBlame .src { padding-left: 8px; }
 
+.index-group {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+}
+
 #wikiSpoiler {
  display: none;
 }
@@ -2683,5 +2689,11 @@ tt.foot {
 
 .info-stat { width: 90%; margin: auto; }
 .info-stat canvas { width: 500px; height: 450px; }
+
+.index-group {
+    -webkit-column-count: inherit;
+    -moz-column-count: inherit;
+    column-count: inherit;
+}
 
 }
