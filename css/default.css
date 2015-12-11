@@ -825,14 +825,14 @@ table.closure, td.closure{
   background-color:#e0e0e0;
 }
 
-.foot .separator {
+#wikiSister .separator, .foot .separator {
   margin-top:0.8em;
   margin-bottom:0.8em;
   border-bottom: 2px solid #eee;
   width:70px;
 }
 
-.foot .separator tt {
+#wikiSister .separator tt, .foot .separator tt {
   display:none;
 }
 
