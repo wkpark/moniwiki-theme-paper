@@ -1995,6 +1995,9 @@ div.wikiInfo { overflow-x: auto; }
 }
 .externalImage>div, .imgAttach>div { display: table; position:relative; }
 .externalImage>div a, .imgAttach>div a { color: #2C4C88 !important; }
+div.imgContainer.imgCenter>div,
+div.imgAttach.imgCenter>div,
+div.externalImage.imgCenter>div { display: block; }
 
 .externalImage img,
 .imgAttach img {
@@ -2598,6 +2601,9 @@ button.btn-navbar {
 .header .gnb .menu { margin: 0px; max-width: 480px; }
 div.imgAttach div, .externalImage div { display: table; margin: 0 auto; }
 div.imgAttach div div, .externalImage div div { display: table; }
+div.imgContainer.imgCenter>div,
+div.imgAttach.imgCenter>div,
+div.externalImage.imgCenter>div { display: table; }
 
 #wikiIcon { position: static; float: none; text-align: center !important; }
 img.wikiIcon { height: 24px; }
