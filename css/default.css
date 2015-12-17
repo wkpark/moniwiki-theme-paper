@@ -1288,10 +1288,12 @@ div.foot ul li {
 }
 
 #wikiPreview, #wikiDiffPreview {
-  border: 2px solid #a0a0a0;
+  border: 1px solid #a0a0a0;
   margin: 5px 5px 5px 5px;
   padding: 5px 1em 5px 1em;
 }
+
+#wikiPreview { height: 500px; overflow-y: auto; }
 
 #edit-summary input { width: 99%; }
 
@@ -1301,13 +1303,13 @@ div.indent {
 }
 
 blockquote.quote {
-  font-family: Georgia, sans-serif;
-  font-size: 14px;
-  margin: 0.55em 1.5em;
-  padding: 0.20em 0.8em;
+  margin: 0.5em 1.8em;
+  padding: 0.7em 0.8em;
+
   line-height: 1.45;
-  color: #383838;
-  overflow: hidden;
+  color: #000000;
+  position: relative;
+  border-left: 4px solid #A4BCCC;
 }
 
 div.quote.indent {
@@ -1315,11 +1317,12 @@ div.quote.indent {
 }
 
 blockquote.quote:before {
+  font-family: Helvetica, Arial, sans-serif;
   position: absolute;
-  margin: -23px 20px 0 -45px;
   content: "\201C";
-  font-size: 70px;
-  color: #707070;
+  font-size: 6.3em;
+  color: #879EAD;
+  margin: -36px 20px 0 -50px;
 }
 
 div.diff-removed {
@@ -2696,4 +2699,5 @@ tt.foot {
     column-count: inherit;
 }
 
+#wikiPreview { height: 300px; }
 }
