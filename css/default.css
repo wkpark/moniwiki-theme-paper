@@ -1132,7 +1132,7 @@ div.foot ul li {
 }
 
 #wikiBody {
-  margin-left:10px;
+  margin-left:0; /* */
   color: black;
 /*  background-color: #fff; /* */
 /*  overflow: hidden; /* magic XXX */
