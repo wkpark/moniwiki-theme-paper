@@ -429,8 +429,8 @@ td.info, th.info {
 }
 
 #wikiContent h1, #wikiContent h2, #wikiContent h3, #wikiContent h4, #wikiContent h5 {
-  margin-left:-0.6rem;
-  padding-left:0.2rem;
+/* margin-left:-0.6rem; */
+/* padding-left:0.2rem; */
   padding-bottom:0.2rem;
   border-bottom:1px solid #ededed; /* */
 }
@@ -2045,6 +2045,10 @@ div.imgAttach div.loading, .externalImage div.loading {
   display: inline-block;
 }
 
+.externalImage img.loading {
+  background: url(../../../imgs/misc/spinner_32.gif) no-repeat center;
+}
+
 div.imgAttach div.wrapper,
 div.externalImage div div.wrapper { display: inline-block; margin:0; padding:0; }
 
@@ -2418,7 +2422,7 @@ a.switch-to-pc {
   margin:0;
 }
 
-.folding dt {
+dl.folding dt {
   height:20px;
   font-weight:bold;
   line-height:20px;
@@ -2429,8 +2433,35 @@ a.switch-to-pc {
   background: url(../../../imgs/misc/open.png) no-repeat 3px 7px;
 }
 
-.folding dt.opened {
+dl.folding dt.opened {
   background: url(../../../imgs/misc/close.png) no-repeat 3px 7px;
+}
+
+/* folding macro */
+.section div.closed { display:none; }
+
+.styling h1.heading.opened,
+.styling h2.heading.opened,
+.styling h3.heading.opened,
+.styling h4.heading.opened,
+.styling h5.heading.opened,
+.styling h6.heading.opened {
+  padding-left: 1.5rem;
+  /* margin-left: -12px; */
+  background: url(../../../imgs/misc/open.png) no-repeat 3px 0.3rem;
+  background-size: 1rem 1rem;
+}
+
+.styling h1.heading.closed,
+.styling h2.heading.closed,
+.styling h3.heading.closed,
+.styling h4.heading.closed,
+.styling h5.heading.closed,
+.styling h6.heading.closed {
+  padding-left: 1.5rem;
+  /* margin-left: -12px; */
+  background: url(../../../imgs/misc/close.png) no-repeat 3px 0.3rem;
+  background-size: 1rem 1rem;
 }
 
 /* Join agreement */
@@ -2662,8 +2693,8 @@ div.section { border-top: 1px solid #e0e0e0; /* */ }
 div.section div div { margin-bottom: 1em; padding-bottom:0; /* */ }
 
 #wikiContent h1, #wikiContent h2, #wikiContent h3, #wikiContent h4, #wikiContent h5 {
-  margin-left:0;
-  padding-left:0;
+/* margin-left:0; */
+/* padding-left:0; */
   padding-bottom:0.2rem;
   border-bottom: none;
 }
