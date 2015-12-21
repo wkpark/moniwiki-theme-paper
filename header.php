@@ -1,11 +1,11 @@
 <?php /* MoniWiki Theme by wkpark at kldp.org */
-if ($this->_no_urlicons == 1)
+if ($self->_no_urlicons == 1)
   echo <<<EOF
 <style type='text/css'>
 img.url { /* display: none; /* */ }
 
 a.externalLink.unnamed {
-  background: url($this->themeurl/imgs/http.png) no-repeat 0 center;
+  background: url($self->themeurl/imgs/http.png) no-repeat 0 center;
   padding: 0 0 0 14px;
   opacity: .8;
   filter: alpha(opacity=80);
@@ -13,7 +13,7 @@ a.externalLink.unnamed {
 
 a.externalLink.unnamed[target="_blank"]:after {
   content: "";
-  background: url($this->themeurl/imgs/external.png) no-repeat 0 center;
+  background: url($self->themeurl/imgs/external.png) no-repeat 0 center;
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -26,7 +26,7 @@ a.externalLink.unnamed[target="_blank"]:after {
 img.externalLink { display: none; }
 </style>\n
 EOF;
-else if ($this->_no_urlicons == 2)
+else if ($self->_no_urlicons == 2)
   echo <<<EOF
 <style type='text/css'>
 img.url { /* display: none; /* */ }
@@ -83,11 +83,11 @@ if (is_mobile() and !empty($_COOKIE['desktop'])) {
 }
 ?>
 <div id='mainBody'>
-<?php echo '<'.$this->tags['header'].'>'; ?>
+<?php echo '<'.$self->tags['header'].'>'; ?>
 
 <div id='wikiIcon'><?php echo $upper_icon.$icons.$rss_icon?></div>
    <!-- goform on the MenuBar -->
-<?php echo '<'.$this->tags['nav']." class='navbar-fixed-top navbar'>";?>
+<?php echo '<'.$self->tags['nav']." class='navbar-fixed-top navbar'>";?>
   <div class="navbar-inner">
     <div class="container">
       <button type="button" class="btn btn-navbar" onclick="toggle_menu()">
@@ -96,7 +96,7 @@ if (is_mobile() and !empty($_COOKIE['desktop'])) {
         <span class="icon-bar"></span>
       </button>
       <span class="brand hidden-desktop"><?php
-echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
+echo $self->link_tag($self->frontpage,'',$DBInfo->sitename);
 ?></span>
 <div id="wikiMenu" class="collapse">
    <div id='goForm'>
@@ -110,10 +110,10 @@ echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
    </div>
 <?php echo str_replace('<div id="wikiMenu">', '', $menu); ?>
 
-</div></div><?php echo '</'.$this->tags['nav'].'>';?>
+</div></div><?php echo '</'.$self->tags['nav'].'>';?>
 
 <?php empty($msg) ? '' : print $msg; ?>
-<?php echo '</'.$this->tags['header'].'>'; ?>
+<?php echo '</'.$self->tags['header'].'>'; ?>
 
 <div id='container'>
 <!-- ?php echo '<div id="wikiTrailer"><p><span>'.$trail.'</span></p></div>';? -->
@@ -121,11 +121,11 @@ echo $this->link_tag($this->frontpage,'',$DBInfo->sitename);
 <?php echo '<div class="wikiTitle entry-title" id="wikiTitle">'.$title.'</div>';?>
 <?php echo $subindex;?>
 <?php
-if (empty($options['action']) and !empty($lastedit) and !empty($this->_use_lastmod)):
+if (empty($options['action']) and !empty($lastedit) and !empty($self->_use_lastmod)):
     echo "<p class='last-modified'>".
         "<span class='i18n' lang='ko' title='last modified:'>"._("last modified:")."</span> <span class='updated'><span class='value-title' title='$datetime'>$lastedit $lasttime</span></span>";
-    if ($this->_use_contributors) {
-        $url = $this->link_url($this->page->urlname, '?action=contributors');
+    if ($self->_use_contributors) {
+        $url = $self->link_url($self->page->urlname, '?action=contributors');
         echo ' ', sprintf(_("by %s"),
             "<span class='editors'><span class='vcard'><a class='fn nickname url' href='".$url."'>".
             "<span class='i18n' lang='ko' title='Contributors'>"._("Contributors")."</span></a></span></span>");
@@ -135,12 +135,12 @@ endif;
 ?>
 <?php
 if (empty($options['action']) and !empty($DBInfo->use_scrap)) {
-  $scrap = $this->macro_repl('Scrap', 'js');
+  $scrap = $self->macro_repl('Scrap', 'js');
   if (!empty($scrap)) {
     echo "<div id='scrap'>";
     echo $scrap;
     echo "</div>";
-    $js = $this->get_javascripts();
+    $js = $self->get_javascripts();
     if ($js) {
       echo $js;
     }
@@ -148,12 +148,12 @@ if (empty($options['action']) and !empty($DBInfo->use_scrap)) {
 }
 
 if (empty($options['action']) and !empty($DBInfo->use_discuss)) {
-  $discuss = $this->macro_repl('Discuss', 'js');
+  $discuss = $self->macro_repl('Discuss', 'js');
   if (!empty($discuss)) {
     echo "<div id='discuss'>";
     echo $discuss;
     echo "</div>";
-    $js = $this->get_javascripts();
+    $js = $self->get_javascripts();
     if ($js) {
       echo $js;
     }
