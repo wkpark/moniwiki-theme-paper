@@ -370,7 +370,6 @@ table.wiki {
   *width:100%; */
   overflow:auto;
   overflow-x: auto;
-  overflow-y: hidden;
 }
 
 table.wiki td, table.wiki th {
