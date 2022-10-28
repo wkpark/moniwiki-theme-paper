@@ -12,8 +12,11 @@ $_uppergoform=0; # enable goform on the top
 $_splash=0; # enable splash image
 $_logo=0; # enable logo
 $_toptitle=0; # old-style title.
+#$_no_urlicons=1; # do not insert url icons
+#$_no_urlicons=2; # mirror style external url icon using css :before
+#$_no_urlicons=3; # mirror style with url icon using a background image
 $_no_urlicons=2; # insert url icons
-$_use_lastmod=0; # show last modified info
+$_use_lastmod=1; # show last modified info
 $_use_contributors=0; # show contributors link
 
 $imgdir=$themeurl."/imgs";

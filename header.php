@@ -1,4 +1,10 @@
 <?php /* MoniWiki Theme by wkpark at kldp.org */
+if (!empty($DBInfo->use_scrap))
+  include_once("plugin/scrap.php");
+
+$ret = $self->macro_repl('RecentChanges', "[H:i a],item=15,bookmark,list,js", array('call'=>1));
+#echo $ret;
+if (!empty($self->_no_urlicons)):
 if ($self->_no_urlicons == 1)
   echo <<<EOF
 <style type='text/css'>
@@ -31,7 +37,7 @@ else if ($self->_no_urlicons == 2)
 <style type='text/css'>
 img.url { /* display: none; /* */ }
 
-a.externalLink:before {
+a.externalLink.unnamed:before {
   padding: 0 0.1em;
   background: #008000;
   color: #FFF;
@@ -54,6 +60,19 @@ a.externalLink.source:before {
 
 </style>\n
 EOF;
+else if ($self->_no_urlicons == 3)
+  echo <<<EOF
+<style type='text/css'>
+img.url { /* display: none; /* */ }
+a.externalLink.unnamed {
+  background: url($self->themeurl/imgs/unnamed.png) no-repeat 0 center;
+  padding: 0 0 0 18px;
+  opacity: .8;
+  filter: alpha(opacity=80);
+}
+</style>\n
+EOF;
+endif;
 
 echo <<<EOF
 <script type="text/javascript">
@@ -134,7 +153,8 @@ if (empty($options['action']) and !empty($lastedit) and !empty($self->_use_lastm
 endif;
 ?>
 <?php
-if (empty($options['action']) and !empty($DBInfo->use_scrap)) {
+$is_show = empty($options['action']) || $options['action'] == 'show';
+if ($is_show and !empty($DBInfo->use_scrap)) {
   $scrap = $self->macro_repl('Scrap', 'js');
   if (!empty($scrap)) {
     echo "<div id='scrap'>";

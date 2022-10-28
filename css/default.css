@@ -516,6 +516,10 @@ div.message {
   background-image: linear-gradient(to bottom,#F3FDF0 0,#E9FDE1 100%);
 }
 
+div.message span.warn {
+  line-height: 60px;
+}
+
 div.message h3 {
   margin:0px;
   border:0px;
@@ -686,7 +690,7 @@ a.button-small {
   margin:0px 2px 0 0;
   text-decoration:none !important;
   margin-left:-3px;
-  line-height:15px;
+  line-height:13px;
 }
 
 a.button-small span {
@@ -702,7 +706,7 @@ a.button-small span {
   line-height:17px; /* 20px */
   text-align:center;
   text-decoration:none;
-  min-width:20px;
+  /* min-width:20px; */
   padding-left:3px;
   padding-right:8px;
   margin-left:3px;
@@ -788,7 +792,7 @@ html>/**/body button span, x:-moz-any-link, x:default {
 }
 
 input[type="submit"] {
-  font-family:Tahoma,Lucida,sans-serif;
+  font-family: Arial,Tahoma,Lucida,sans-serif;
   padding:2px 3px;
   font-size:12px;
 }
@@ -800,6 +804,13 @@ html>/**/body input[type="submit"], x:-moz-any-link, x:default {
 .searchResult input[value="Go"] {
   font-size:2em;
   width:auto;
+}
+
+.searchResult span input.button, .searchResult span.button, .jmolControl button, .jmolControl a.button {
+  background: revert;
+  height: revert;
+  border: revert;
+  padding: revert;
 }
 
 .searchResult { text-align:center; }
@@ -1232,7 +1243,6 @@ div.foot ul li {
 
 .toctoggle {
   position: relative;
-  top: 3px;
   display: inline-block;
 }
 
@@ -1361,6 +1371,15 @@ blockquote.quote:before {
   font-size: 6.3em;
   color: #879EAD;
   margin: -36px 20px 0 -50px;
+}
+
+span.editinfo .edit, span.editinfo .save {
+  font-weight: bold;
+  font-family: Verdana, Helvetica, Trebuchet MS, Arial, sans-serif;
+  text-shadow: 0px 0px 2px #555;
+  background-image: linear-gradient(#BCFDBC, #90FF90);
+  height: 18px;
+  white-space: nowrap;
 }
 
 div.diff-removed {
@@ -1528,7 +1547,7 @@ caption.month {
   color: #0686d8;
 }
 
-.popup .wikiLogin {
+.popup .wikiLogin, .popup .wikiUser {
   margin: 5px auto;
   padding: 1em;
   width: 260px;
@@ -1537,7 +1556,7 @@ caption.month {
   box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
 }
 
-.popup .wikiLogin td {
+.popup td, {
   vertical-align: middle;
   font-weight: bold;
   color: #333;
@@ -2150,6 +2169,9 @@ div.externalObject { display: block; padding-left: auto; padding-right: auto;}
 /* avatar */
 img.avatar { height:16px; vertical-align:middle; border: none; }
 
+/* avatar */
+img.avatar { height:16px; vertical-align:middle; border: none; }
+
 /* FIXME */
 @media screen and (min-width: 480px) and (max-width: 700px) {
 object.external { max-width:360px; max-height: 300px; }
@@ -2244,7 +2266,7 @@ table.wiki { overflow-x: auto; }
 }
 
 .wikiRedirect p {
-  background: url("../../../imgs/misc/redirect.png") no-repeat 0 6px;
+  background: url("../../../imgs/misc/redirect.png") no-repeat 0 3px;
   padding-left: 12px;
   margin: 0.1em 0 2em 0em;
   font-size:1.5em;
@@ -2329,6 +2351,9 @@ img.interwiki { margin-right: 2px; }
 }
 
 div#float-footnote {
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #f3f3f3;
   box-shadow: 0 -1px 8px 0 rgba(0,0,0,0.35);
   word-wrap: break-word;
@@ -2362,7 +2387,7 @@ div#float-footnote {
   width: 16px;
   height: 12px;
   background: url(../../../imgs/misc/close-button.png) no-repeat scroll 0 0 transparent;
-  margin-top: 0.7em;
+  margin-top: 0;
   background-position: right top;
   -o-background-size: auto 12px;
   -webkit-background-size: auto 12px;
@@ -2658,6 +2683,20 @@ button.btn-navbar {
 .navbar .hidden-desktop { display:none; }
 .brand a { text-decoration: none; color: #333; }
 
+/* for Jmol */
+.ui-widget {
+    font-family: Dotum,Verdana,Arial,sans-serif;
+    /*font-size: 1.1em;*/
+}
+
+.jmolPopupMenu {
+    font-family: Dotum,Arial,sans-serif !important;
+}
+
+.jmolPopupMenu a {
+    font-size: 11px !important;
+}
+
 @media screen and (max-width: 480px) {
 .hidden-desktop { display:inherit!important;}
 .navbar .btn-navbar {
@@ -2685,6 +2724,22 @@ button.btn-navbar {
     border-width: 0px 0px 1px;
     border-radius: 0px;
 }
+
+div#float-footnote {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f3f3f3;
+  box-shadow: 0 -1px 8px 0 rgba(0,0,0,0.35);
+  word-wrap: break-word;
+  z-index: 5;
+  position:fixed;
+}
+
+tt.foot {
+  font-size:12px;
+}
+
 }
 
 @media screen and (max-width: 800px) {
